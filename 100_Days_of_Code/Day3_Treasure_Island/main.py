@@ -22,3 +22,16 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
+
+choice = input(
+    'You have arrived at Dragons Ridge. There are 2 paths you can take.\nWill you go left or right?')
+
+if choice == 'left':
+    second_choice = input('You went throught the shifting rifts, arriving at an bizzare island filled with towering trees and air so dense, it can be seen by the naked eye.'
+                          '\n You notice there are giant imprints on the ground, creating a trail that leads further in the forest of giant Trees.'
+                          '\n Will you follow the trail or observe the surroundings?')
+    if second_choice == 'observe':
+        final_choice = input('You chose to observe the surrounds, when suddenly deep in the forest, you hear a mighty ROOOAAR.'
+                             '\nThe sound vibrates throughtout the entire forrest, the trees tremble, the ground quakes'
+                             '\nAnimals of all shapes and sizes scurrying about in chaos.'
+                             '\nWhat will you do, og towards the sound, or run away')
