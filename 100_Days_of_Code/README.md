@@ -1,0 +1,1 @@
+#This folder is for all the projects that will be done from Angela Yu's 100 days of python course on Udemy
