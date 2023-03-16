@@ -13,7 +13,14 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 # Eazy Level - Order not randomised:
 # e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 str = ''
-
-
+for i in range(0, nr_letters):
+    str += letters[random.randint(0, len(letters) - 1)]
+for i in range(0, nr_symbols):
+    str += symbols[random.randint(0, len(symbols) - 1)]
+for i in range(0, nr_numbers):
+    str += numbers[random.randint(0, len(numbers) - 1)]
+print(str)
 # Hard Level - Order of characters randomised:
 # e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+randomizedStr = ''.join(random.sample(str, len(str)))
+print(randomizedStr)
