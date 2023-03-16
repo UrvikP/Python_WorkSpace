@@ -22,6 +22,6 @@ for i in range(0, nr_numbers):
 print(str)
 # Hard Level - Order of characters randomised:
 # e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
-newStr = ''
+
 randomizedStr = ''.join(random.sample(str, len(str)))
 print(randomizedStr)
