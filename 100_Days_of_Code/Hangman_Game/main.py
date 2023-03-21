@@ -19,6 +19,10 @@ tries = len(hangman_art.stages) - 1
 end_of_game = False
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
+    while guess in display:
+        guess = input(
+            "You've already guessed this letter correctly. Choose another letter: ")
+
     for i in range(len(chosen_word)):
         if guess == chosen_word[i]:
             display[i] = guess
@@ -28,6 +32,10 @@ while not end_of_game:
     if tries == 0:
         print("You Lose.")
         end_of_game = True
-        # Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
+
+    # Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
     print(display)
     print(hangman_art.stages[tries])
+    if "_" not in display:
+        print("You win!")
+        end_of_game = True
