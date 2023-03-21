@@ -44,7 +44,7 @@ while not end_of_game:
         print("You Lose.")
         end_of_game = True
 
-    print(f"{''.join(display)}")
+    print(f"{' '.join(display)}")
     print(hangman_art.stages[tries])
     if "_" not in display:
         print("You win!")
