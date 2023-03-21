@@ -17,16 +17,14 @@ ________________________________________________________________________________
 chosen_word = random.choice(hangman_words.word_list)
 
 # Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 # For each letter in the chosen_word, add a "_" to 'display'.
-# So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
 display = []
 for letter in chosen_word:
     display.append("_")
 
 tries = len(hangman_art.stages) - 1
-# If the letter at that position matches 'guess' then reveal that letter in the display at that position.
-# e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
+
 end_of_game = False
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
@@ -46,8 +44,7 @@ while not end_of_game:
         print("You Lose.")
         end_of_game = True
 
-    # Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
-    print(display)
+    print(f"{''.join(display)}")
     print(hangman_art.stages[tries])
     if "_" not in display:
         print("You win!")
