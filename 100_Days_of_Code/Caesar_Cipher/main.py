@@ -5,30 +5,16 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-def encrypt(plain_text, shift_amount):
-    cipher_text = ""
-    for letter in plain_text:
+def caesar(start_text, shift_amount, cipher_direction):
+    end_text = ""
+    if cipher_direction == 'decode':
+            shift_amount *= -1
+        
+    for letter in start_text:
         position = alphabet.index(letter)
         new_position = position + shift_amount
-        new_letter = alphabet[new_position]
-        cipher_text += new_letter
-    
-    print(f"The encoded text is {cipher_text}")
+        end_text += alphabet[new_position]
 
-def decrypt(plain_text, shift_amount):
-    cipher_text = ""
-    for letter in plain_text:
-        position = alphabet.index(letter) + 26
-        new_position = position - shift_amount
-        new_letter = alphabet[new_position]
-        cipher_text += new_letter
-    
-    print(f"The decode text is {cipher_text}")
+    print(f"The {cipher_direction}d text is {end_text}")
 
-#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
-if direction == 'encode':
-    encrypt(text, shift)
-elif direction == 'decode':
-    decrypt(text, shift)
-else:
-    print(" You must type 'encode' or 'decode'")
+caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
