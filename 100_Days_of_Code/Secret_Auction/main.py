@@ -6,7 +6,7 @@ auction_bidders = {}
 status = True
 while status:
     name = input("What is the bidder's name: ")
-    bid = input("What is the bid ammount: ")
+    bid = int(input("What is the bid ammount: "))
 
     auction_bidders[name] = bid
 
@@ -19,8 +19,9 @@ while status:
 highest_bidder = ""
 largest_bid_ammount = 0
 for bidder in auction_bidders:
-    if auction_bidders[bidder] > largest_bid_ammount:
+    bid_amount = auction_bidders[bidder]
+    if bid_amount > largest_bid_ammount:
         highest_bidder = bidder
-        largest_bid_ammount = auction_bidders[bidder]
+        largest_bid_ammount = bid_amount
 
 print(f"The winner is {highest_bidder}. Congradulations!")
