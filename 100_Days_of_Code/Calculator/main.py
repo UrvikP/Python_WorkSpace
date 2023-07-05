@@ -1,5 +1,6 @@
+from art import logo
 # Calculator functions
-
+print(logo)
 #Add
 def add(x, y):
     return x + y
@@ -24,8 +25,8 @@ operations = {
     "/": div,
 }
 
-num1 = int(input("What's the first number? "))
-num2 = int(input("What's the second number? "))
+num1 = float(input("What's the first number? "))
+num2 = float(input("What's the second number? "))
 
 for symbols in operations:
     print(symbols)
@@ -41,7 +42,7 @@ print(f"{num1} {operation_symbol} {num2} = {answer}")
 Aditional_op = True
 while Aditional_op:
     operation_symbol = input("Pick another operation: ")
-    num3 = int(input("What's the next number? "))
+    num3 = float(input("What's the next number? "))
     calc_function = operations[operation_symbol]
     prev_answer = answer
     answer = calc_function(answer, num2)
